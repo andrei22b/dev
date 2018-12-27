@@ -3,7 +3,6 @@ import { Route, Switch, BrowserRouter, withRouter } from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { Provider } from 'react-redux'
 import './App.css'
-import './fade.css' 
 import store from './store'
 
 import Navmenu from './components/Nav/navmenu'
@@ -11,13 +10,8 @@ import Home from './components/Home/home'
 import Login from './components/Login/login'
 
 class App extends Component {
-    static propTypes ={
-        location: PropTypes.object.isRequired,
-    }
+
     render () {
-        const { location } = this.props;
-        console.log(location);
-        const appearTransition = this.state; 
         return (
             <Provider store={ store }>
                 <div className="App">
@@ -25,12 +19,12 @@ class App extends Component {
                         <Navmenu/>
                     </header>
                         <BrowserRouter>
-                                <Switch location={location}>
-                                    console.log(loc)
+                                <Switch>
                                     <Route exact path="/" component={Home} />
                                     <Route path="/login" component={Login} />
+                                    <Route path="/nana" component={Login} />
                                 </Switch>
-                        </BrowserRouter>   
+                        </BrowserRouter>
                 </div>
             </Provider>
         )

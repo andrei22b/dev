@@ -5,8 +5,17 @@ import { Modal, Button, Popover, Tooltip, OverlayTrigger } from 'react-bootstrap
 import './login.css';
 
 class Login extends React.Component {
+    state = {
+      name: 'Andrei',
+      age: 27
+    }
     render () {
-      return <h1>Login Page</h1>
+      return (
+        <div className='App-login'>
+          <h1>Nume = {this.state.name}</h1>
+          <h1>Varsta = {this.state.age}</h1>
+        </div>
+      )
     }
   }
   
